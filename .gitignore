@@ -1,0 +1,5 @@
+*.json
+*.parameters.json
+bin/
+obj/
+.vscode/
