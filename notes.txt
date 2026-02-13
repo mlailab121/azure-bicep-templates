@@ -1,0 +1,89 @@
+Create Resource Group
+az group create --name rg-arm-demo --location eastus
+
+Validate Bicep Template
+az deployment group validate --resource-group rg-arm-demo --template-file azuredeploy.json --parameters @azuredeploy.parameters.json
+
+What-If Deployment - Preview changes before applying:
+az deployment group what-if --resource-group rg-arm-demo --template-file azuredeploy.json --parameters @azuredeploy.parameters.json
+
+Deploy ARM Template
+az deployment group create --name storage-deploy-01 --resource-group rg-arm-demo --template-file azuredeploy.json --parameters @azuredeploy.parameters.json
+
+az deployment group validate --resource-group TestLab-Ruwaz --template-file create-vm.json
+
+az deployment group what-if --resource-group TestLab-Ruwaz --template-file storageaccount.json
+
+az deployment group create --name test-arm-template --resource-group TestLab-Ruwaz --template-file test.json
+
+--mode Complete
+
+
+az deployment group validate --name cleanup-resources --resource-group TestLab-Ruwaz --template-file cleanup.json --mode Complete
+
+
+
+
+
+az deployment group validate --resource-group rg-win10-demo --template-file windows10-vm.bicep
+
+az deployment group what-if --resource-group rg-win10-demo --template-file windows10-vm.bicep
+
+az deployment group create --resource-group rg-win10-demo --template-file windows10-vm.bicep
+
+
+
+az deployment group validate --resource-group rg-win10-demo --template-file blank.bicep
+az deployment group what-if --resource-group rg-win10-demo --template-file blank.bicep
+
+cleanup resources
+az deployment group create --name cleanup-resources --resource-group rg-win10-demo --template-file blank.bicep --mode Complete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
